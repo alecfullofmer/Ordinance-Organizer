@@ -1,19 +1,6 @@
 
 	var app = angular.module('OrdinanceApp', []);
 
-    //	app.config(function ($routeProvider) {
-    //      $routeProvider.when('/select', {
-    //        controller: 'DemoCntl',
-    //        templateUrl: 'views/selectOrdinance.html'
-    //      })
-    //        .otherwise({
-    //         redirectTo: '/'
-    //      });
-    // 	});
-
-
-
-
     app.controller('DemoCntl',['$scope', '$location', '$http', '$q', '$timeout', function($scope, $location, $http, $q, $timeout) {
       	
         var fsClient = new FamilySearch({
@@ -27,7 +14,7 @@
           auto_expire: true,
           auto_signin: true
         });
-    var accessTok; 
+ 
     $scope.loggedIn = false;
     $scope.run = function() { 
         fsClient.getAccessToken().then(function (response) {
